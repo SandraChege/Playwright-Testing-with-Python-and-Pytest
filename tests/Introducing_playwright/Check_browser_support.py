@@ -7,3 +7,5 @@ with sync_playwright() as p:
         page.goto('https://www.whatsmybrowser.org/')
         page.screenshot(path=f'example-{browser_type.name}.png')
         browser.close()
+
+        #If the website is not hosted use "python -m http.server"
