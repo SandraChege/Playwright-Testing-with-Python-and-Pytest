@@ -1,4 +1,4 @@
-#Locators
+# Locators
 1. page.get_by_role() to locate by explicit and implicit accessibility attributes.
 2. page.get_by_text() to locate by text content.
 3. page.get_by_label() to locate a form control by associated label's text.
