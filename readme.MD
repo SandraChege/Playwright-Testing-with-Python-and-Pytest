@@ -62,6 +62,29 @@ Run Playwright tests using `pytest`:
 ```sh
 pytest test_example.py
 ```
+### **5. Basic Actions**
+Playwright provides methods to navigate web pages effectively: 
+    - `page.goto(url)`: Navigates to a specified URL.
+    - `page.go_back()`:  Moves to the previous page in history.
+    - `page.go_forward()`:  Advances to the next page in history.
+    - `page.reload()`: Reloads the current page.
+    
+#### Waiting for page load
+You can use the `wait_until` parameter to control when navigation is considered complete. Available options:
+    - `commit` – Navigation committed.
+    - `domcontentloaded` – DOM content fully loaded.
+    - `load` – Page fully loaded (including resources like images and scripts).
+    - `networkidle` – No ongoing network requests.
+### **6. Difference between fill() vs type()
+Both `fill()` and `type()` are used to enter text into input fields, but they behave differently:
+    -`fill(value)`:
+       - Clears existing text before entering new value.
+       - Faster as it sets the value directly.
+    - `type(value)`:
+        - Simulates real typing, one character at a time. 
+        - Slower but mimics user input.
+        - DOes not clear existing value.
+Use `fill()` when you just want to set a value quickly, and `type()` when simulating real user input with keypress events.
 
 ## Debugging Tips
 - Use `headless=False` to see test execution.
